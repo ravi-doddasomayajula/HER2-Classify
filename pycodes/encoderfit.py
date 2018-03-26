@@ -1,0 +1,10 @@
+#X_train, y_train = get_data('wbc-classification/' + 'images/TRAIN/')
+#X_test, y_test = get_data('wbc-classification/' + 'images/TEST_SIMPLE/')
+
+encoder = LabelEncoder()
+#encoder.fit(y_train)
+#encoder.fit(y_test)
+y_train1 = encoder.fit_transform(y_train)
+y_test1 = encoder.fit_transform(y_test)
+y_train_dummy = np_utils.to_categorical(y_train1)
+y_test_dummy = np_utils.to_categorical(y_test1)
